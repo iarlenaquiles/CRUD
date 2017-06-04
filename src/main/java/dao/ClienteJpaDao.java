@@ -59,8 +59,13 @@ public class ClienteJpaDao implements ClienteDao {
 	}
 
 	@Override
+	public Cliente getCliente(Integer id) {
+		return em.find(Cliente.class, id);
+	}
+
+	@Override
 	public void close() {
-		if(em != null && em.isOpen()){
+		if (em != null && em.isOpen()) {
 			em.close();
 		}
 	}
