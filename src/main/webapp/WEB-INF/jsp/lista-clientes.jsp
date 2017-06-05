@@ -17,12 +17,15 @@
 		<div class="row">
 			<div class="col-lg-8"></div>
 			<div class="col-lg-4">
-				<a class="btn btn-primary btn-lg" href="central?logica=FormClienteLogic"><i class="fa fa-plus"></i>Novo Cliente</a>
-				<a class="btn btn-default btn-lg" href="central?logica=ListaClientesLogic"><i class="fa fa-refresh"></i>Atualizar</a>
+				<a class="btn btn-primary btn-lg"
+					href="central?logica=FormClienteLogic"><i class="fa fa-plus"></i>Novo
+					Cliente</a> <a class="btn btn-default btn-lg"
+					href="central?logica=ListaClientesLogic"><i
+					class="fa fa-refresh"></i>Atualizar</a>
 			</div>
 
 		</div>
-		<jsp:useBean id="dao" class="dao.ClienteJpaDao"></jsp:useBean>
+
 		<div id="list" class="row">
 			<div class="table-responsive col-md-12">
 				<table class="table table-striped">
@@ -34,15 +37,19 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${dao.lista}" var="cliente">
+						<c:forEach items="${clientes}" var="cliente">
 							<tr>
 								<td>${cliente.id}</td>
 								<td>${cliente.nome}</td>
 								<td class="actions"><a class="btn btn-success btn-sm"
-									href="central?logica=VisualizarClienteLogic&id=${cliente.id}"><i class="fa fa-eye"></i> Visualizar</a> <a
-									class="btn btn-warning btn-sm" href="central?logica=FormClienteEditarLogic&id=${cliente.id}"><i class="fa fa-pencil"></i> Editar</a> <a
+									href="central?logica=VisualizarClienteLogic&id=${cliente.id}"><i
+										class="fa fa-eye"></i> Visualizar</a> <a
+									class="btn btn-warning btn-sm"
+									href="central?logica=FormClienteEditarLogic&id=${cliente.id}"><i
+										class="fa fa-pencil"></i> Editar</a> <a
 									class="btn btn-danger btn-sm"
-									href="central?logica=RemoveClienteLogic&id=${cliente.id}"><i class="fa fa-trash"></i> Remover</a></td>
+									href="central?logica=RemoveClienteLogic&id=${cliente.id}"><i
+										class="fa fa-trash"></i> Remover</a></td>
 							</tr>
 						</c:forEach>
 					</tbody>
